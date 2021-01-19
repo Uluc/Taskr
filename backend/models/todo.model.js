@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const exerciseSchema = new Schema(
+const todoSchema = new Schema(
   {
     username: {
       type: String,
@@ -30,6 +30,6 @@ const exerciseSchema = new Schema(
   }
 );
 
-const Exercise = mongoose.model("Exercise", exerciseSchema);
+const Todo = mongoose.model("Todo", todoSchema);
 
-module.exports = Exercise;
+module.exports = Todo;
