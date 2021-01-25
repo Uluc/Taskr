@@ -7,7 +7,6 @@ export default class EditTodo extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
@@ -54,11 +53,6 @@ export default class EditTodo extends Component {
       });
   }
 
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value,
-    });
-  }
 
   onChangeDescription(e) {
     this.setState({
@@ -88,7 +82,6 @@ export default class EditTodo extends Component {
     e.preventDefault();
 
     const todo = {
-      username: this.state.username,
       description: this.state.description,
       title: this.state.title,
       duration: this.state.duration,
@@ -109,27 +102,9 @@ export default class EditTodo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h3>Edit Todo Log</h3>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Username: </label>
-            <select
-              ref="userInput"
-              required
-              className="form-control"
-              value={this.state.username}
-              onChange={this.onChangeUsername}
-            >
-              {this.state.users.map(function (user) {
-                return (
-                  <option key={user} value={user}>
-                    {user}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
           <div className="form-group">
             <label>Description: </label>
             <input
