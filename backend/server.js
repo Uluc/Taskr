@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+const passport = require("passport");
+const account = require("./routes/account");
+
 require("dotenv").config();
 
 const app = express();
@@ -18,6 +21,13 @@ connection.once("open", () => {
 //MIDDLEWARE
 app.use(cors());
 app.use(express.json());
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+app.use("/accounts", account);
 
 const todosRouter = require("./routes/todos");
 const usersRouter = require("./routes/users");
