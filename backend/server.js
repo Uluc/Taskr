@@ -30,10 +30,11 @@ require("./config/passport")(passport);
 app.use("/accounts", account);
 
 const todosRouter = require("./routes/todos");
-const usersRouter = require("./routes/users");
+const subjectRouter = require("./routes/subjects")
  
 app.use("/todos", todosRouter);
-app.use("/users", usersRouter);
+app.use("/subjects", subjectRouter);
+
 //LISTEN SERVER
 app.listen(port, () => {
   console.log(`Server is running on: ${port}`);
