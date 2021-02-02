@@ -8,21 +8,33 @@ const todoSchema = new Schema(
       type: String,
       required: true,
     },
-    description: { 
-        type: String, 
-        required: true 
+    description: {
+      type: String,
+      required: true,
     },
-    title: { 
-        type: String, 
-        required: true 
+    title: {
+      type: String,
+      required: true,
     },
-    duration: { 
-        type: Number, 
-        required: true 
+    section: {
+      type: String,
+      required: true
     },
-    date: { 
-        type: Date, 
-        required: true 
+    type:{
+      type: String,
+      required: false,
+    },
+    duration: {
+      type: Number,
+      required: true,
+    },
+    completed: {
+      type: Boolean,
+      required: false
+    },
+    date: {
+      type: Date,
+      required: true,
     },
   },
   {
