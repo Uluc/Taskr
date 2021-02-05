@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
-import { WebContainer } from "../../styles/containers";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";

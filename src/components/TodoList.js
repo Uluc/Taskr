@@ -39,7 +39,7 @@ const Todo = (props) => (
     <TableCell align="right">{props.todo.duration}</TableCell>
     <TableCell align="right">{props.todo.date.substring(0, 10)}</TableCell>
     <TableCell align="right">
-      <IconButton aria-label="delete" href={"/edit/" + props.todo._id}>
+      <IconButton aria-label="edit" href={"/edit/" + props.todo._id}>
         <EditIcon fontSize="small" />
       </IconButton>
 
@@ -84,8 +84,6 @@ class TodoList extends Component {
 
   deleteTodo(id) {
 
-    
-
     axios.delete("http://localhost:5000/todos/" + id).then((response) => {
       console.log(response.data);
     });
@@ -93,6 +91,7 @@ class TodoList extends Component {
     this.setState({
       todos: this.state.todos.filter((el) => el._id !== id),
     });
+
   }
 
   // completion(id) {

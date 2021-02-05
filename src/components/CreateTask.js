@@ -214,7 +214,7 @@ class CreateTodo extends Component {
                 id="type"
               >
                 <MenuItem value={"school"}>School</MenuItem>
-                <MenuItem value={"menu"}>Work</MenuItem>
+                <MenuItem value={"work"}>Work</MenuItem>
                 <MenuItem value={"personal"}>Personal</MenuItem>
                 <MenuItem value={"chores"}>Chores</MenuItem>
                 <MenuItem value={"other"}>Other</MenuItem>

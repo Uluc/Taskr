@@ -16,8 +16,7 @@ import Select from "@material-ui/core/Select";
 import Avatar from "@material-ui/core/Avatar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
-import EditIcon from '@material-ui/icons/Edit';
-
+import EditIcon from "@material-ui/icons/Edit";
 
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
@@ -45,10 +44,15 @@ const useStyles = (theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
   formControl: {
-    minWidth: 300,
+    display: "flex",
+    flexDirection: "row",
+  },
+  formButton: {
+    margin: theme.spacing(1, 0, 1),
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
+    maxWidth: 300,
   },
 });
 
@@ -238,7 +242,16 @@ class EditTodo extends Component {
                 <MenuItem value={"personal"}>Personal</MenuItem>
                 <MenuItem value={"chores"}>Chores</MenuItem>
                 <MenuItem value={"other"}>Other</MenuItem>
+                <Button
+                className={classes.formButton}
+                
+                color="primary"
+              >
+                New Type
+              </Button>
               </Select>
+
+              
             </FormControl>
 
             <FormControl className={classes.formControl}>
@@ -254,6 +267,13 @@ class EditTodo extends Component {
                 fullWidth
               >
                 <MenuItem value={"CSC4242"}>CSC4242</MenuItem>
+                <Button
+                  className={classes.formButton}
+                  
+                  color="primary"
+                >
+                New Section
+              </Button>
               </Select>
             </FormControl>
 
@@ -269,7 +289,7 @@ class EditTodo extends Component {
           </form>
         </div>
       </Container>
-  
+
       // <div className="container">
       //   <h3>Edit Todo Log</h3>
       //   <form onSubmit={this.onSubmit}>

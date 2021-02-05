@@ -9,8 +9,8 @@ import store from "./store";
 
 import Navbar from "./components/navbars/Navbar";
 import TodoList from "./components/TodoList";
-import CreateTodo from "./components/create-todo.components";
-import EditTodo from "./components/edit-todo.components"
+import CreateTodo from "./components/CreateTask";
+import EditTodo from "./components/EditTask"
 
 import Landing from "./components/Landing";
 import Register from "./components/auth/Register";
@@ -43,14 +43,14 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-          <Navbar/>
+          
 
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
 
           <Switch>
-
+            
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/list" component={TodoList} />
             <PrivateRoute exact path="/edit/:id" component={EditTodo} />
