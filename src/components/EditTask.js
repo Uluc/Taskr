@@ -47,12 +47,9 @@ const useStyles = (theme) => ({
     display: "flex",
     flexDirection: "row",
   },
-  formButton: {
-    margin: theme.spacing(1, 0, 1),
-  },
+  formButton: {},
   selectEmpty: {
     marginTop: theme.spacing(2),
-    maxWidth: 300,
   },
 });
 
@@ -242,16 +239,12 @@ class EditTodo extends Component {
                 <MenuItem value={"personal"}>Personal</MenuItem>
                 <MenuItem value={"chores"}>Chores</MenuItem>
                 <MenuItem value={"other"}>Other</MenuItem>
-                <Button
-                className={classes.formButton}
-                
-                color="primary"
-              >
-                New Type
-              </Button>
+                <MenuItem>
+                  <Button className={classes.formButton} color="primary">
+                    New Type
+                  </Button>
+                </MenuItem>
               </Select>
-
-              
             </FormControl>
 
             <FormControl className={classes.formControl}>
@@ -267,13 +260,11 @@ class EditTodo extends Component {
                 fullWidth
               >
                 <MenuItem value={"CSC4242"}>CSC4242</MenuItem>
-                <Button
-                  className={classes.formButton}
-                  
-                  color="primary"
-                >
-                New Section
-              </Button>
+                <MenuItem>
+                  <Button className={classes.formButton} color="primary">
+                    New Section
+                  </Button>
+                </MenuItem>
               </Select>
             </FormControl>
 
@@ -289,60 +280,6 @@ class EditTodo extends Component {
           </form>
         </div>
       </Container>
-
-      // <div className="container">
-      //   <h3>Edit Todo Log</h3>
-      //   <form onSubmit={this.onSubmit}>
-      //     <div className="form-group">
-      //       <label>Description: </label>
-      //       <input
-      //         type="text"
-      //         required
-      //         className="form-control "
-      //         value={this.state.description}
-      //         onChange={this.onChangeDescription}
-      //       />
-      //     </div>
-
-      //     <div className="form-group">
-      //       <label>Title: </label>
-      //       <input
-      //         type="text"
-      //         required
-      //         className="form-control"
-      //         value={this.state.title}
-      //         onChange={this.onChangeTitle}
-      //       />
-      //     </div>
-
-      //     <div className="form-group">
-      //       <label>Duration (in minutes): </label>
-      //       <input
-      //         type="text"
-      //         className="form-control"
-      //         value={this.state.duration}
-      //         onChange={this.onChangeDuration}
-      //       />
-      //     </div>
-      //     <div className="form-group">
-      //       <label>Date: </label>
-      //       <div>
-      //         <DatePicker
-      //           selected={this.state.date}
-      //           onChange={this.onChangeDate}
-      //         />
-      //       </div>
-      //     </div>
-
-      //     <div className="form-group">
-      //       <input
-      //         type="submit"
-      //         value="Edit Todo Log"
-      //         className="btn btn-primary"
-      //       />
-      //     </div>
-      //   </form>
-      // </div>
     );
   }
 }
