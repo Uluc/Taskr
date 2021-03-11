@@ -132,11 +132,7 @@ class TodoDashboard extends Component {
 
   todoList() {
     return this.state.todos.map((currentTodo) => {
-      return (
-        <React.Fragment>
-          <Todo todo={currentTodo} key={currentTodo._id} />
-        </React.Fragment>
-      );
+      return <Todo todo={currentTodo} key={currentTodo._id} />;
     });
   }
 
