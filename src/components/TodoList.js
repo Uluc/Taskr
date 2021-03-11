@@ -26,6 +26,22 @@ import AddIcon from "@material-ui/icons/Add";
 import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 
+import { withStyles } from "@material-ui/core/styles";
+
+
+const useStyles = (theme) => ({
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+
+});
+
+
 const Todo = (props) => (
   <TableRow>
     <TableCell padding="checkbox">
@@ -70,6 +86,7 @@ class TodoList extends Component {
   componentDidMount() {
     const { user } = this.props.auth;
     const userId = user.id;
+  
     axios
       .get("http://localhost:5000/todos/user/" + userId)
       .then((response) => {
@@ -107,18 +124,20 @@ class TodoList extends Component {
   todoList() {
     return this.state.todos.map((currentTodo) => {
       return (
-        <>
+       
           <Todo
+            key={currentTodo._id}
             todo={currentTodo}
             deleteTodo={this.deleteTodo}
-            key={currentTodo._id}
           />
-        </>
       );
     });
   }
 
   render() {
+
+    const {classes} = this.props;
+
     return (
       <Container maxWidth="md">
         <Grid container justify="center">
@@ -146,7 +165,7 @@ class TodoList extends Component {
             </Table>
           </TableContainer>
 
-          <Fab color="primary" aria-label="add" href="/create">
+          <Fab color="primary" aria-label="add" href="/create" className = {classes.submit}>
             <AddIcon />
           </Fab>
         </Grid>
@@ -163,4 +182,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps)(withStyles(useStyles)(TodoList));
