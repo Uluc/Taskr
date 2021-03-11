@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const account = require("./routes/account");
 
+
 require("dotenv").config();
 
 const app = express();
@@ -31,9 +32,11 @@ app.use("/accounts", account);
 
 const todosRouter = require("./routes/todos");
 const subjectRouter = require("./routes/subjects")
+const typeRouter = require("./routes/types")
  
 app.use("/todos", todosRouter);
 app.use("/subjects", subjectRouter);
+app.use("/types", typeRouter);
 
 //LISTEN SERVER
 app.listen(port, () => {
