@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Subject = require("../models/subject");
 
 router.route("/").get((req, res) => {
-  Todo.find()
+  Subject.find()
     .then((subjects) => res.json(subjects))
     .catch((err) => res.status(400).json("Error: " + err));
 });
