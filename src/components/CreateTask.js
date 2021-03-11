@@ -218,6 +218,11 @@ class CreateTodo extends Component {
                 <MenuItem value={"personal"}>Personal</MenuItem>
                 <MenuItem value={"chores"}>Chores</MenuItem>
                 <MenuItem value={"other"}>Other</MenuItem>
+                <MenuItem>
+                  <Button className={classes.formButton} color="primary">
+                    New Type
+                  </Button>
+                </MenuItem>
               </Select>
             </FormControl>
 
@@ -234,6 +239,11 @@ class CreateTodo extends Component {
                 fullWidth
               >
                 <MenuItem value={"CSC4242"}>CSC4242</MenuItem>
+                <MenuItem>
+                  <Button className={classes.formButton} color="primary">
+                    New Section
+                  </Button>
+                </MenuItem>
               </Select>
             </FormControl>
 
@@ -250,82 +260,7 @@ class CreateTodo extends Component {
         </div>
       </Container>
 
-      // <Container maxWidth="md">
-      //   <Typography variant="h3" color="initial">
-      //     New Task
-      //   </Typography>
-
-      //   <form onSubmit={this.onSubmit} noValidate autoComplete="off">
-      //     <Grid
-      //       container
-      //       spacing={1}
-      //       direction="column"
-      //       justify="flex-start"
-      //       alignItems="flex-start"
-      //     >
-      //       <TextField
-      //         id="title"
-      //         type="text"
-      //         label="Title"
-      //         fullWidth
-      //         required
-      //         value={this.state.title}
-      //         onChange={this.onChange}
-
-      //       />
-
-      //       <TextField
-      //         id="description"
-      //         type="text"
-      //         label="Description"
-      //         fullWidth
-      //         required
-      //         value={this.state.description}
-      //         onChange={this.onChange}
-
-      //       />
-
-      //       <TextField
-      //         id="duration"
-      //         type="text"
-      //         label="Duration"
-      //         fullWidth
-      //         required
-      //         value={this.state.duration}
-      //         onChange={this.onChange}
-
-      //       />
-
-      //       <FormControl>
-      //         <InputLabel id="type">Type</InputLabel>
-      //         <Select
-      //           id="type"
-      //           value={this.state.type}
-      //           onChange={this.onChange}
-      //           fullWidth
-      //         >
-      //           <MenuItem value={"school"}>School</MenuItem>
-      //           <MenuItem value={"menu"}>Work</MenuItem>
-      //           <MenuItem value={"personal"}>Personal</MenuItem>
-      //           <MenuItem value={"chores"}>Chores</MenuItem>
-      //           <MenuItem value={"other"}>Other</MenuItem>
-      //         </Select>
-      //       </FormControl>
-
-      //       <label>Date: </label>
-      //       <div>
-      //         <DatePicker
-      //           selected={this.state.date}
-      //           onChange={this.onChangeDate}
-      //         />
-      //       </div>
-
-      //       <Button variant="text" color="primary" type="submit">
-      //         Create Task
-      //       </Button>
-      //     </Grid>
-      //   </form>
-      // </Container>
+      
     );
   }
 }
